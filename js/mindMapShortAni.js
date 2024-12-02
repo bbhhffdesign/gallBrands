@@ -28,8 +28,8 @@ const no3 = document.getElementById("no3");
 //icono like
 const iconoLike = document.getElementById("iconoLike");
 
+
 // flechas recorrido principal
-//loopeo entre los elementos con id flechaX y les cambio la propiedad del trazo
 for (let i = 1; i <= 7; i++) {
     const flecha = document.getElementById(`flecha${i}`);
     const flechaLength = flecha.getTotalLength();
@@ -45,6 +45,7 @@ for (let i = 1; i <= 7; i++) {
   });
 
   tl_mindmap
+  .to(mindMap, {opacity: 1})
       .to(aniStartBtn, {y: "-50vh"})
       .from(dueño, { opacity: 0 })
       .to(flecha1, { strokeDashoffset: 0 })
