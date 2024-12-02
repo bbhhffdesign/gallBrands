@@ -1,0 +1,62 @@
+@use '../abstract/variables' as*;
+@use '../abstract/mixins' as*;
+
+svg {
+
+  .hero-gem {
+    fill: var(--colorBg);
+  }
+  
+  .oferta-logo-1,
+  .comunicacion-logo-1,
+  .marca-logo-1 {
+    fill: var(--colorBg);
+  }
+  .oferta-logo-2,
+  .oferta-logo-3,
+  .comunicacion-logo-2,
+  .marca-logo-2 {
+    fill: var(--colorSecundario);
+  }
+
+  .logo-nav {
+    fill: var(--colorBg_invert);
+  }
+
+
+  .borde-ext,
+  .borde-int,
+  .gemstone-sup,
+  .gemstone-inf,
+  .gall{
+    fill: none;
+    stroke-width: 1px;
+    stroke: var(--formBg_stroke);
+
+    @include desktop-sm{
+      stroke-width: 2px;
+    }
+  }
+}
+
+.gemstone-svg{
+  .cls-1{
+    stroke: var(--colorBg);
+    stroke-width: 2;
+    fill: none;
+  }
+
+}
+
+.brand{
+  filter: invert(0%);
+}
+.brand-invert{
+  filter: invert(100%);
+}
+
+.footer {
+  svg {
+    fill: var(--colorSvg_1);
+  }
+}

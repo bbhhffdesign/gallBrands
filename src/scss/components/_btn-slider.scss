@@ -1,0 +1,117 @@
+@use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
+
+
+.switch {
+    // font-size: .9rem;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+    // width: 5em;
+    // height: 3em;
+
+    @include tablet{
+      // transform: scale(1.2);
+    }
+    @include tablet-l{
+      // transform: scale(1.4);
+    }
+
+
+    
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    // --background: #28096b;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    transition: .5s;
+    border-radius: 30px;
+    border: solid 1px  var(--colorBg_invert);
+  }
+  
+  .slider:before {
+    z-index: 2;
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
+    left: 10%;
+    bottom: 15%;
+    box-shadow: inset 8px -4px 0px 0px var(--colorSecundario);
+    background: transparent;
+    transition: .5s;
+  }
+  
+  input:checked + .slider {
+    background-color: transparent;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(100%);
+    box-shadow: inset 15px -4px 0px 15px var(--colorSecundario);
+  }
+
+
+  .switch2 {
+    z-index: 4;
+    position: fixed;
+    bottom: 3.5rem;
+    right: 1rem;
+    
+    
+    .slider{
+      border: none;
+      
+      &::after{
+
+          z-index: 1;
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          border-radius: 30px;
+          backdrop-filter: blur(4px);
+          background-color: var(--colorBg_switch);
+      }
+    }
+  }
+  
+  .totop__container{
+    
+    .switch3{
+      z-index: 5;
+      bottom: 1rem;
+      
+      svg{
+        
+        position: absolute;
+        @include centrarhorizontal2;
+        z-index: 1;
+        height: inherit;
+        width: auto;
+        transform: scale(.9);
+        transform-origin: 50% 50%;
+        fill: var(--colorSecundario);
+      }
+      
+      .slider::before{
+        box-shadow: none;
+      }
+    }
+  }

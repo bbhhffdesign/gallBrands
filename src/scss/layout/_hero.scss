@@ -1,0 +1,152 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.hero {
+  position: relative;
+  margin-top: 1rem;
+  padding: 0 clamp(1rem, -0.765rem + 7.843vw, 3rem);
+
+  & > div {
+    height: 100svh;
+  }
+  & > :nth-child(2) {
+    height: 60svh;
+    @include flex(column, center, center, none);
+  }
+
+  @include desktop-sm {
+    margin-top: 2rem;
+    box-sizing: border-box;
+  }
+
+  @include desktop-lg {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+  }
+  @include desktop-xlg {
+    margin: 0 auto;
+  }
+  .mindmap-click {
+    margin-top: $spac-xs;
+  }
+
+  .cuales-title {
+    box-sizing: border-box;
+
+    @include desktop-sm {
+      height: 100svh;
+    }
+  }
+
+  .hero-text {
+    height: 100%;
+    @include flex(column, center, flex-start, none);
+    position: relative;
+
+    @include mobile-sm {
+      gap: 1rem;
+    }
+
+    @include tablet {
+      margin-top: 0;
+      // padding: 0 3rem;
+    }
+    @include desktop-sm {
+      // padding: 0 0 0 3rem;
+
+      .hr__disable {
+        display: none;
+      }
+    }
+    @include desktop-md {
+      padding: 0;
+      padding-left: clamp(3rem, -7rem + 12.5vw, 8rem);
+    }
+
+    button {
+      margin-top: 2rem;
+      color: var(--colorBg);
+      // font-size: 120%;
+    }
+
+    .hero-p-container > p {
+      overflow-y: hidden;
+
+      span {
+        display: inline-block;
+      }
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3.5rem, 0.591rem + 14.545vw, 4.5rem);
+
+      @include tablet {
+        font-size: clamp(6rem, 2.429rem + 9.524vw, 7rem);
+      }
+      @include desktop-sm {
+        font-size: clamp(3.8rem, 1.4rem + 3vw, 5rem);
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .mindmap-container {
+    position: relative;
+    width: 100%;
+    overflow-y: hidden;
+    min-height: 200px;
+
+    .scrolldown {
+      padding: clamp(0.5rem, 0.143rem + 1.786vw, 1rem)
+        clamp(2rem, 1.286rem + 3.571vw, 3rem);
+      position: absolute;
+      @include centrarAbsolute;
+      z-index: 1;
+      @include desktop-sm {
+        padding: 0.6rem 2.5rem;
+      }
+
+      img {
+        height: clamp(1rem, 0.143rem + 4.286vw, 2.2rem);
+        // height: 1.5rem;
+        width: auto;
+        @include desktop-sm {
+          height: 1.5rem;
+        }
+      }
+    }
+    .mindmap__toend{
+      position: absolute;
+      height: 100%;
+      width: inherit;
+      z-index: 1;
+      display: none;
+    }
+
+    //mindmap svg
+
+    .mindmap-overflow {
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      @include flex(column, center, center, none);
+    }
+
+    .mindmap {
+      height: auto;
+      width: 100%;
+      padding: 0.5rem;
+      background-color: var(--colorBg_switch);
+    }
+
+    @include desktop-sm {
+      width: 80%;
+      height: auto;
+    }
+  }
+}

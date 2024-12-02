@@ -1,0 +1,301 @@
+@use 'variables' as *;
+
+
+@mixin text-gradient($color1:var(--colorBg_invert), $color2:var(--colorBg_almost)) {
+  background: radial-gradient(circle, $color1, $color2); 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+}
+
+//margin top/bottom 0
+@mixin marginvert0{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+@mixin paddingvert0{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+// centrar horizontal
+@mixin centrarAbsolute{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin centrarhorizontal{
+  left: 50%;
+  transform: translateX(-50%);
+}
+@mixin centrarvertical{
+  top: 50%;
+  transform: translateY(-50%);
+}
+@mixin centrarhorizontal2{
+  left: 0;
+  right: 0;
+  margin: 0 auto
+}
+
+//fonts
+@mixin font-raleway($weight:400){
+font-family: "raleway", sans-serif;
+font-optical-sizing: auto;
+font-weight: $weight;
+font-style: normal;
+}
+
+@mixin font-articulat-bold($weight:400){
+  font-family: "articulat_bold", sans-serif;
+  font-weight: $weight;
+  font-style: normal;
+}
+
+@mixin font-rajdhani($weight:400){
+  font-family: "rajdhani", sans-serif;
+  font-weight: $weight;
+  font-style: normal;
+}
+@mixin font-monument-ultrabold($weight:400){
+  font-family: "monument";
+  font-weight: $weight;
+  font-style: normal;
+}
+@mixin font-monument-normal($weight:100){
+  font-family: "monument_dos";
+  font-weight: $weight;
+  font-style: normal;
+}
+@mixin font-menseal-medium($weight:400){
+  font-family: "menseal_medium";
+  font-weight: $weight;
+  font-style: normal;
+}
+@mixin font-menseal-regular($weight:400){
+  font-family: "menseal_regular";
+  font-weight: $weight;
+  font-style: normal;
+}
+@mixin font-menseal-semibold($weight:400){
+  font-family: "menseal_semibold";
+  font-weight: $weight;
+  font-style: normal;
+}
+
+
+//border gradients glass fx
+
+@mixin border-gradient{
+  border: 1px solid;
+  border-image-slice: 1;
+  border-image-source: radial-gradient(circle, var(--borderGradient1), var(--borderGradient2));
+  border-left:  none;
+  border-right: none ;
+}
+
+@mixin border-gradient-left {
+  border-left: 2px solid transparent; // Establece el borde izquierdo
+  border-image-slice: 1;
+  border-image-source: radial-gradient(circle, var(--colorBg_invert), var(--colorBg));
+}
+@mixin border-gradient-left-right( $color1:var(--colorBg_invert), $color2:var(--colorBg)) {
+  border-left: 1px solid transparent; // Establece el borde izquierdo
+  border-right: 1px solid transparent; // Establece el borde izquierdo
+  // border: solid 2px transparent;
+  border-image-slice: 1;
+  border-image-source:  linear-gradient(180deg,  $color1, $color2);
+}
+
+@mixin glass-bg-only($zIndex1: -1, $bg-color: transparent, $blur: 10px){
+  z-index: 0;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $zIndex1;
+    border-radius: inherit; 
+    background: $bg-color; 
+    backdrop-filter: blur($blur);
+    -webkit-backdrop-filter: blur($blur);
+    @content;
+  }
+
+}
+
+.glass-bg{
+  @include glass-bg-only;
+}
+
+@mixin glass-bg($color1: var(--negro), $color2: var(--blanco), $border-width: 1px,
+ $blur: 4px, $bg-color: transparent, $position: relative, $zIndex1: -1, $zIndex2:0, $zIndex3:1){
+  
+  position: $position;
+  padding: $border-width;
+  border-radius: $border-rad-s;
+  background-clip: padding-box;
+  border: $border-width solid transparent;
+  z-index: $zIndex2;
+  /* Pseudo-elemento para el borde gradiente */
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    padding: $border-width;
+    background: linear-gradient(to right, $color1, $color2); 
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); 
+    -webkit-mask-composite: xor;
+    mask-composite: exclude; 
+    pointer-events: none;
+    z-index: $zIndex3;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $zIndex1;
+    border-radius: inherit; 
+    background: $bg-color; 
+    backdrop-filter: blur($blur);
+    -webkit-backdrop-filter: blur($blur);
+  }
+}
+
+
+@mixin glass-mask($color: transparent, $blur:4px ){
+  background-color: transparent;
+
+  &::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: $color;
+    backdrop-filter: blur($blur);
+    @content;
+  }
+}
+//utilidades
+@mixin flex($direction:row,$justify:auto, $align:auto, $gap:none){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+//mediaqueries
+@mixin mobile-xsm {
+    @media (min-width: $mobile-xsm) {
+      @content;
+    }
+  }
+@mixin mobile-sm {
+    @media (min-width: $mobile-sm) {
+      @content;
+    }
+  }
+@mixin mobile {
+    @media (min-width: $mobile) {
+      @content;
+    }
+  }
+@mixin tablet {
+    @media (min-width: $tablet) {
+      @content;
+    }
+  }
+@mixin tablet-l {
+    @media (min-width: $tablet-l) {
+      @content;
+    }
+  }
+@mixin desktop-sm {
+    @media (min-width: $desktop-sm) {
+      @content;
+    }
+  }
+@mixin desktop-md {
+    @media (min-width: $desktop-md) {
+      @content;
+    }
+  }
+@mixin desktop-lg {
+    @media (min-width: $desktop-lg) {
+      @content;
+    }
+  }
+@mixin desktop-xlg {
+    @media (min-width: $desktop-xlg) {
+      @content;
+    }
+  }
+
+
+//animaciones&hovers
+@mixin ani-btn($transform: scale(1.05), $origin:center){
+    transform: $transform;
+    transform-origin: $origin;
+    transition: transform ease-out .1s;
+}
+
+@mixin ani-padding-right($paddingInicial:$spac-s, $padding:.8rem, $ease:linear, $duration:.1s){
+    padding-right: $spac-s + $padding;
+    transition: padding-right linear $duration;
+}
+@mixin ani-padding-left($paddingInicial:$spac-s, $padding:.8rem, $ease:linear, $duration: 1s){
+    padding-left: $spac-s + $padding;
+    transition: padding-left linear $duration;
+}
+
+@mixin hvr-right($direction:right, $time1:.1s, $time2:.3s){
+    will-change: transform;
+    background-color: transparent;
+    &::before{
+        will-change: transform;
+        content: "";
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        border-radius: $border-rad-xs;
+        background: var(--colorSecundario);
+        transform: scaleX(1);
+        transition: transform $time2 ease-out;
+        transform-origin: right;
+    }
+}
+
+
+@mixin hvr-right-2($direction:right, $time1:.1s, $time2:.3s){
+    will-change: transform;
+    background-color: transparent;
+    transition:color $time2 ease-in;
+    &::before{
+        will-change: transform;
+        content: "";
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        border-radius: $border-rad-xs;
+        background: var(--colorSecundario);
+        transform: scaleX(1);
+        transition: transform $time2 ease-out;
+        transform-origin: right;
+    }
+   
+
+}
+
+

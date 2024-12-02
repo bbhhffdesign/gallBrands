@@ -1,0 +1,200 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.orbita {
+  padding-bottom: 0;
+}
+
+.orbita__container {
+  @include flex(column, space-between, center, none);
+  position: relative;
+  height: 150svh;
+
+  @include desktop-sm {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+
+  .orbita__text {
+    padding: 0 1rem;
+    text-align: center;
+
+    .orbitxt__a{
+      margin: 0;
+    }
+
+    h2{
+      @include font-monument-normal;
+    }
+  
+
+    .orbitxt__display{
+      display: inline;
+    }
+
+
+
+
+    @include tablet {
+      padding: 0 2.5rem;
+    }
+    @include tablet-l {
+      padding: 0 4rem;
+    }
+
+    @include desktop-sm{
+      
+      h2{
+        margin-top: 0;
+      }
+      h3{
+        margin-bottom: 0;
+      }
+      h4{
+        margin-top: 0;
+      }
+
+      h4{
+        font-weight: 400;
+        br{
+          display: none;
+        }
+      }
+    }
+
+    .orbita__text__boxes{
+      display: none;
+      margin-top: 5rem;
+
+
+      @include desktop-sm{
+        @include flex(row, space-evenly, center, none)
+      }
+
+      .orbita__box{
+        padding: .5rem 1rem;
+        border-radius: $border-rad-s;
+        border-top:solid 1px var(--colorBg_invert);
+        border-left:solid 1px var(--colorBg_invert);
+        border-bottom:solid 1px var(--textoPrincipal);
+        border-right:solid 1px var(--textoPrincipal);
+        margin: 2rem;
+
+        p{
+          font-size: 140%;
+          margin: 0;
+        }
+
+        &:hover{
+          background: var(--glassBg);
+        }
+      }
+    }
+  }
+
+  .orbitas__svg__container {
+    overflow: hidden;
+    position: relative;
+    height: 90svh;
+    width: 100%;
+
+    @include desktop-sm {
+      height: auto;
+      @include flex(row, center, center, none);
+    }
+
+    &::after {
+      z-index: 3;
+      content: "";
+      position: absolute;
+      top: -20%;
+      width: 200%;
+      height: 150%;
+      box-shadow: inset 1px 0px 50px 40px var(--colorBg);
+      pointer-events: none;
+
+      @include desktop-sm {
+        width: 150%;
+        height: 120%;
+        top: auto;
+        bottom: -10px;
+        box-shadow: inset 1px 0px 50px 40px var(--colorBg);
+      }
+    }
+
+    svg {
+      z-index: 3;
+      overflow: visible;
+      stroke-width: 1px;
+      position: absolute;
+      height: 100%;
+      width: auto;
+      top: 0px;
+      left: 0px;
+      transform: translateX(-50%);
+
+      @include desktop-sm {
+        width: 35%;
+        height: auto;
+        position: relative;
+        transform: rotate(-90deg) translateX(-50%);
+      }
+
+      .orb-stroke-dash {
+        fill: none;
+        stroke: var(--colorBg_invert);
+        stroke-dasharray: 5, 5;
+      }
+
+      .orb-stroke {
+        stroke: var(--textoTitulos);
+        stroke-width: 0.5px;
+        fill: none;
+      }
+      .orb-stroke2 {
+        // stroke-width: 2px;
+        stroke: var(--textoPrincipal);
+        fill: none;
+      }
+      .orb-fill {
+        stroke: var(--colorBg_invert);
+        fill: var(--colorBg);
+        stroke-width: 0.5px;
+      }
+      .orb-stroke-fill {
+        stroke-width: 0.5px;
+        stroke: var(--colorBg_invert);
+        fill: var(--textoPrincipal);
+      }
+    }
+  }
+}
+
+.caja_icono {
+  z-index: 4;
+  position: absolute;
+  width: auto;
+  display: none;
+  @include border-gradient;
+
+  @include desktop-sm{
+    top: 0;
+    left: 0;
+  }
+
+  p {
+    position: relative;
+    z-index: 3;
+    font-size: 90%;
+    margin: 0.5rem 0;
+  }
+
+  &::before {
+    z-index: 2;
+    position: absolute;
+    content: "";
+    inset: 0;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(10px);
+  }
+}

@@ -1,0 +1,70 @@
+@use "../abstract/mixins" as *;
+@use "../abstract/variables" as *;
+
+@keyframes slide {
+  to {
+    transform: translateX(calc(-100% - 4rem));
+  }
+}
+
+.brand__display{
+  height: 80lvh;
+  @include flex(column, center, center, none);
+
+  @include desktop-sm{
+    height: 40lvh;
+    justify-content: flex-end;
+  }
+}
+
+.brands-animation{
+  @include border-gradient;
+  @include flex(column, flex-start , center, none);
+  width: 100vw;
+  background: var(--glassBg);
+  will-change: transform;
+
+  @include tablet{
+    transform: scale(1.2);
+  }
+  @include tablet-l{
+    transform: scale(1.4);
+  }
+  
+  
+  @include desktop-sm{
+    // height: 50vh;
+  }
+  
+  .brands-container{
+    position: relative;
+  }
+  
+  .brands-bar {
+    max-height: 60px;
+      position: relative;
+      padding: 1rem 0;
+      @include flex(row, center, center, 4rem);
+      flex-wrap: nowrap;
+  
+
+  
+      .brand:hover{
+        transform: scale(1.2);
+        transition: transform ease .5s;
+        
+      }
+  }
+  
+  .brands-slide {
+      @include flex(row, center, center, 4rem);
+       animation: 20s slide linear infinite;
+       animation-direction: reverse;
+  
+  img {
+      height: 3.5rem;
+      width: auto;
+  
+    }
+  }
+}

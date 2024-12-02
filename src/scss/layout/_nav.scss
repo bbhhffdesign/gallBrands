@@ -1,0 +1,50 @@
+@use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
+@use "../../css/pure.css";
+
+.nav{
+    @extend .pure-menu-horizontal;
+    position: fixed;
+    top: 0;
+    height: 3rem;
+    padding: $spac-xs 0;
+    border: none; 
+    z-index: 2;
+    width: 100%;
+    @include flex(row, space-around, center, auto);
+    flex-wrap: wrap;
+    @include font-raleway;
+ 
+
+    a{
+        svg{
+            overflow: visible;
+            height: inherit;
+            width: auto;
+        }
+    }
+
+
+    @include tablet{
+        padding: .5rem 0;
+        // height: 4rem;
+        justify-content: space-evenly;
+
+    }
+    @include desktop-sm{
+        height: 4rem;
+    }
+    @include desktop-md{
+        border-top: none;
+    }
+    @include desktop-lg{
+        height: 5rem;
+    }
+
+    a{
+        @include flex(row, center, center,none);
+    }
+
+}
+
+

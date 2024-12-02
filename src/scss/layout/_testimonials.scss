@@ -1,0 +1,60 @@
+@use "../abstract/mixins" as *;
+@use "../abstract/variables" as *;
+
+.testimonials {
+  height: 150vh;
+  @include flex(column, center, center, none);
+  padding: 0 $spac-s;
+
+  @include tablet{
+    padding: 0 $spac-m ;
+  }
+
+  @include desktop-sm{
+    height: auto;
+  }
+
+  .testi_container_text{
+    @include flex(column, center, center,none);
+    margin-bottom: 10rem;
+
+    @include desktop-sm{
+      height: 50vh;
+    }
+  }
+
+  .testi__container {
+    height: inherit;
+    @include flex(column, space-between, center, none);
+
+    @include desktop-sm {
+      flex-direction: row;
+    }
+
+
+    .testimonial {
+      position: relative;
+      padding: $spac-s;
+      margin: $spac-s;
+      max-width: 30rem;
+      overflow-y: hidden;
+      @include glass-bg-only;
+      @include border-gradient;
+
+      p:nth-child(2) {
+        color: var(--colorSecundario);
+      }
+      p:nth-child(3) {
+        color: var(--textoTitulos);
+      }
+      p:nth-child(4) {
+        color: var(--textoPrincipal);
+      }
+
+      img {
+        height: 2rem;
+        width: auto;
+      }
+    }
+  }
+}

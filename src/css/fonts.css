@@ -1,0 +1,34 @@
+
+@font-face{
+    font-family: 'raleway';
+    src: url(../../assets/fonts/Raleway-VariableFont_wght.ttf) format('truetype');
+}
+@font-face{
+    font-family: 'monument';
+    src: url(../../assets/fonts/MonumentExtended-Ultrabold.otf) format('opentype');
+}
+@font-face{
+    font-family: 'monument_dos';
+    src: url(../../assets/fonts/MonumentExtended-Regular.otf) format('opentype');
+}
+@font-face{
+    font-family: 'menseal_medium' ;
+    src: url(../../assets/fonts/Menseal-Medium.ttf) format('opentype');
+}
+@font-face{
+    font-family: 'menseal_regular' ;
+    src: url(../../assets/fonts/Menseal-Regular.ttf) format('opentype');
+}
+@font-face{
+    font-family: 'menseal_semibold' ;
+    src: url(../../assets/fonts/Menseal-SemiBold.ttf) format('opentype');
+}
+
+@font-face{
+    font-family: 'articulat_bold' ;
+    src: url(../../assets/fonts/Fontspring-DEMO-articulatcf-bold-BF64a38d89ce81e.otf) format('opentype');
+}
+@font-face{
+    font-family: 'rajdhani' ;
+    src: url(../../assets/fonts/Rajdhani-Regular.ttf) format('truetype');
+}

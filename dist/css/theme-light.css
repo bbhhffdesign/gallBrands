@@ -1,0 +1,35 @@
+:root{
+    --colorBg: #dcdcdc;
+    --colorBg_invert: #000000;
+    --colorBg_switch: #c6c6c63c;
+    --colorBg_almost: #e1e1e1;
+
+    --colorPrimario: #0B4599;
+    --colorSecundario: #eba94d;
+    --textoPrincipal: #101010;
+    --textoTitulos: #000000;
+    --textoStrong: #000000;
+
+    --colorSvg_1: #000000;
+    --colorSvg_2: #000000;
+
+    --borderGradient1: #000000;
+    --borderGradient2: #c6c6c6;
+    
+    --glassBg : radial-gradient(at center top, #00000020, #01010100);
+    --glassBg_bottom : radial-gradient(at center bottom, #ff950034, #dcdcdc);
+
+    --gradHr : radial-gradient(at center, #010101, #ffffffd3);
+
+
+    --gris: #969696;
+    --gris1: #969696;
+    --svgInvert: invert(0);
+
+    --formBg: #c6c6c6;
+    --formBg_stroke: #868484;
+    --formGradient: #ffffff;
+    --formTransparent: #5957576f;
+    --lightTransparent: #0000000e;
+
+}

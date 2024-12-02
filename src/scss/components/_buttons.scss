@@ -1,0 +1,94 @@
+@use "../../css/pure.css";
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+
+.btn-pri {
+    @extend .pure-button;
+    @include font-raleway;
+    border-radius: $border-rad-xs;
+    padding: $spac-xs .2rem;
+
+    @include hvr-right;
+
+    
+    @include tablet{
+        font-size: 100%;
+        padding: $spac-xs $spac-s;
+        border-radius: $border-rad-s;
+    }
+    @include desktop-lg{
+        // font-size: 120%;
+    }
+}
+.btn-pri-m {
+    @extend .btn-pri;
+    border-radius: $border-rad-s;
+    font-size: 120%;
+}
+.btn-pri-l {
+    @extend .btn-pri-m;
+    font-size: 140%;
+}
+.btn-pri-xl {
+    @extend .btn-pri-m;
+    font-size: 160%;
+}
+.btn-pri-xxl {
+    @extend .btn-pri-m;
+    font-size: 180%;
+}
+// .btn-pri-s:hover,
+.btn-pri:hover,
+.btn-pri-m:hover,
+.btn-pri-l:hover,
+.btn-pri-xl:hover,
+.btn-pri-xxl:hover {
+    box-shadow: none;
+    background-color: $transparent0;
+    border: $border-white;
+}
+.btn-pri:hover::before,
+.btn-pri-m:hover::before,
+.btn-pri-l:hover::before,
+.btn-pri-xl:hover::before,
+.btn-pri-xxl:hover:before {
+    transform: scaleX(0);
+    transition: transform .3s ease-out;
+}
+
+.cta{
+    padding: .3rem .8rem;
+
+
+    .cta__text__big,
+    .cta__text__small{
+        margin: 0;
+        color: var(--colorBg);
+        font-weight: 600;
+    }
+
+    .cta__text__big{
+        font-size: 1rem;
+        
+        @include tablet{
+            font-size: clamp(1.2rem, 0.486rem + 1.905vw, 1.4rem);
+        }
+
+        @include desktop-sm{
+            font-size: clamp(1rem, 0.6rem + 0.5vw, 1.2rem);
+        }
+    }
+
+    .cta__text__small{
+        font-size: .8rem;
+        
+        @include tablet{
+            font-size: clamp(1rem, 0.286rem + 1.905vw, 1.2rem);
+        }
+        
+        @include desktop-sm{
+            font-size: clamp(0.8rem, 0.4rem + 0.5vw, 1rem);
+        }
+    }
+}

@@ -1,0 +1,119 @@
+@use "../abstract/mixins" as *;
+@use "../abstract/variables" as *;
+
+.services {
+  height: auto;
+  margin: 0 auto;
+
+  @include desktop-sm {
+    // height: 130dvh;
+  }
+
+  .services-text-container {
+    @include flex(column, space-evenly, center, none);
+    height: 110svh;
+
+    .services-boxes-title {
+      @include font-monument-normal;
+      @include text-gradient;
+    }
+  }
+
+  .services-text {
+    position: relative;
+    width: 100%;
+    padding: 1rem 0;
+    overflow-y: hidden;
+    // @include glass-bg-only;
+    @include border-gradient;
+    background-color: var(--colorBg_switch);
+
+    & > div {
+      overflow-y: hidden;
+      padding: 0 2rem;
+    }
+
+    @include desktop-sm {
+      padding: 1rem 0;
+      br {
+        display: none;
+      }
+    }
+  }
+
+  // .blur {
+  //   @include glass-bg-only;
+  // }
+
+  .active {
+    &::before {
+      background: var(--glassBg);
+    }
+  }
+
+  .services-boxes {
+    margin: 0 auto;
+    // justify-content: center;
+    width: 100%;
+    height: 150svh;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    @include tablet {
+      max-width: 650px;
+    }
+
+    @include desktop-sm {
+      flex-direction: row;
+      height: 100vh;
+      max-width: none;
+      width: 100%;
+    }
+
+    .service {
+      // margin: $spac-s;
+      margin: 0 $spac-s;
+      position: relative;
+      padding: $spac-s $spac-s;
+      text-align: center;
+      overflow-y: hidden;
+      @include border-gradient;
+
+      @include tablet {
+        margin: 0 $spac-l;
+      }
+      @include tablet-l {
+        margin: 0 4rem;
+      }
+      @include desktop-sm {
+        margin: 0;
+        width: 30%;
+
+        &:hover{
+          background: var(--glassBg);
+        }
+      }
+      @include desktop-md {
+        // margin: 0 2rem;
+        width: 30%;
+      }
+
+      .logo-title {
+        text-align: center;
+        h3 {
+          margin-top: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+@include desktop-sm {
+  #services-box-2 {
+    transform: translateY(40%);
+  }
+  #services-box-3 {
+    transform: translateY(80%);
+  }
+}

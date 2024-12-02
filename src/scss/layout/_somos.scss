@@ -1,0 +1,154 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+
+.somos,
+.somos__laptop{
+  height: 100svh;
+}
+
+.somos__laptop{
+  display: none;
+
+  @include desktop-sm{
+
+    @include flex(column, center, center,none);
+
+  }
+}
+
+.somos {
+  box-sizing: border-box;
+
+  @include desktop-sm {
+    @include flex(row, center, center, none);
+  }
+
+  .mindmap-title-container {
+    position: relative;
+    height: 100%;
+    @include flex(column, space-around, center, none);
+
+    h2 {
+      hr {
+        border: none;
+        height: 1px;
+        background: #ffffff;
+        background: var(--gradHr);
+      }
+    }
+
+    @include tablet {
+      // padding: 0 $spac-m;
+    }
+
+    @include desktop-sm {
+      max-width: 60rem;
+    }
+    .mindmaptxtbottom {
+      margin: 0 2rem;
+
+      @include tablet{
+        margin: 0 4rem;
+      }
+      @include tablet-l{
+        margin: 0 5rem;
+      }
+
+    }
+    .mindmap-text-border {
+      text-align: center;
+      position: relative;
+      overflow: visible;
+      @include flex(column, space-around, center, none);
+      flex-grow: 0.5;
+      overflow-x: hidden;
+      // margin: 0 1rem;
+      padding: 0 2rem;
+      &::before{
+        border-radius: $border-rad-s;
+        background-color: var(--lightTransparent);
+        mask: url('https://bbhhffdesign.github.io/pure.css/assets/gallLogo-mask.svg') center no-repeat;
+        mask-size: 90%;
+        overflow: visible;
+
+        @include desktop-sm{
+          mask-size: contain;
+        }
+      }
+
+
+      @include tablet{
+        margin: 0 3rem 0 2rem;
+        padding-left: 2rem;
+      }
+      @include tablet-l{
+        margin: 0 4rem 0 3rem;
+        padding-left: 3rem;
+      }
+      @include desktop-sm {
+        align-items: center;
+        max-width: 60rem;
+        margin: 0 auto;
+        flex-grow: 1;
+        @include border-gradient-left;
+      }
+    }
+
+
+
+
+    .mindmap-title-cta {
+      padding: 0.5rem 2rem;
+    }
+
+    & > div {
+      overflow-y: hidden;
+      // margin: 0 auto;
+    }
+
+    h2 {
+      @include font-monument-normal;
+      // @include font-articulat-bold;
+      @include text-gradient;
+    }
+    h3 {
+      //   text-align: center;
+
+      span {
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+    }
+
+    button {
+      padding: 0;
+      font-size: 100%;
+      color: var(--colorBg);
+      // transform: translateY(-130px);
+
+      @include tablet {
+        transform: scale(1.2);
+      }
+
+      strong {
+        color: var(--colorBg);
+      }
+
+      &:hover {
+        color: var(--colorBg_invert);
+
+        strong {
+          color: var(--colorBg_invert);
+        }
+      }
+    }
+    @include tablet {
+      br {
+        display: none;
+      }
+    }
+    @include desktop-sm {
+      // display: none;
+    }
+  }
+}

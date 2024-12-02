@@ -1,0 +1,85 @@
+@use "../abstract/mixins" as *;
+@use "../abstract/variables" as *;
+
+.cta-email {
+  @include flex(column, center, center, none);
+  height: auto;
+  padding: $spac-s;
+  // max-width: 1000px;
+  margin: 20lvh 0;
+  
+  @include desktop-sm{
+    height: 80lvh;
+    margin: 0 auto;
+        
+  }
+
+  p {
+    text-align: center;
+    font-size: 80%;
+    max-width: 512px;
+    @include tablet{
+      font-size: 100%;
+    }
+  }
+
+  .cta-email-container {
+    z-index: 2;
+    @include font-raleway;
+    position: relative;
+    width: fit-content;
+    // max-width: 512px;
+    border-radius: $border-rad-s;
+    background-color: #6f6f6f52;
+    @include flex(row, center, center,none);
+
+    @include desktop-sm{
+      justify-content: space-between;
+    }
+
+
+
+    button {
+      font-size: 100%;
+      padding: 0.5rem 1rem;
+      color: var(--colorBg);
+
+      @include desktop-sm {
+        font-size: 120%;
+      }
+    }
+
+    input {
+      text-align: center;
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      color: var(--textoTitulos);
+
+      &::placeholder {
+        color: var(--textoPrincipal);
+        text-align: center;
+      }
+    }
+
+   
+    @include desktop-sm {
+      // width: 40%;
+    }
+  }
+
+
+  .checkbox__email{
+    @include flex(row, center, center, 1rem);
+      
+
+    a{
+      text-decoration: none;
+    }
+  }
+
+  .ctaemail__terms{
+    width: 100%;
+  }
+
+}

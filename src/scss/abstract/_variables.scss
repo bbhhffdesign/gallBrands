@@ -1,0 +1,57 @@
+
+$colorPrimario:#0B4599;
+$colorPrimarioTransparent: #00000000;
+// $colorSecundario: #C9FC59;
+// $colorSecundario: #FF6700;
+// $colorSecundario: #f38a6a;
+// $colorSecundario: #F7931E;
+$colorSecundario: #eba94d;
+// $colorSecundario: #0B4599;
+// $colorSecundario: #f7a839;
+// $colorSecundario: #F7931E ;
+$colorSecundarioTransparent: #ccff663d;
+$blanco: #000000;
+$blancoTrue: #000000;
+$gris1: #cccccc;
+$gris2: #666666;
+$gris3: #333333;
+$negro: #ffffff;
+$transparent0: rgba(147, 147, 147, 0.367);
+$transparent1: rgba(0, 0, 0, 0.479);
+$transparent2: #00000093;
+$transparentGrey: rgba(61, 61, 61, 0.45);
+$transparentBlack: rgba(0, 0, 0, 0.466);
+
+//media queries
+$mobile-xsm: 22rem;
+$mobile-sm: 24rem;
+$mobile: 35.5rem;
+$tablet: 37.5rem;
+$tablet-l: 48rem;
+$desktop-sm: 64rem;
+$desktop-md: 80rem;
+$desktop-lg: 90rem;
+$desktop-xlg: 120rem;
+
+//fonts
+$fuentePrincipal: 'roboto', sans-serif;
+$fuenteSecundaria: 'raleway', sans-serif;
+$fuenteTerciaria: 'rajdhani', sans-serif;
+
+
+// border
+$border-principal: solid 1px var(--colorBg_invert);
+$border-black: solid 1px var(--borderNegro);
+// $border-black-2: solid 2px black;
+$border-white: solid 1px var(--borderBlanco);
+// $border-white-2: solid 2px #cccccc;
+
+//medidas
+$vh100: 100vh;
+$dvh100: 100dvh;
+$border-rad-xs: .3rem .05rem;  
+$border-rad-s: .5rem .05rem;  
+$spac-xs:.5rem;
+$spac-s: 1rem;
+$spac-m: 2rem;
+$spac-l: 2.5rem;

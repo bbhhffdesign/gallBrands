@@ -1,0 +1,206 @@
+@use "../abstract/mixins" as *;
+@use "../abstract/variables" as *;
+
+.gemstone {
+  height: auto;
+
+  @include desktop-sm{
+      //margin
+  }
+
+  .gemstone-text-1-container {
+    @include flex(column, center, center, none);
+    position: relative;
+    height: 100lvh;
+
+    .gemstone-title-container {
+      @include flex(column, flex-end, center, none);
+      flex-grow: 1.5;
+    }
+    .gemstone-svg-container {
+      @include flex(column, center, center, none);
+      flex-grow: 1;
+
+      svg {
+        width: 60%;
+        height: auto;
+
+        @include tablet {
+          width: 50%;
+        }
+        @include tablet-l {
+          width: 40%;
+        }
+
+        .gall {
+          stroke: none;
+        }
+      }
+    }
+  }
+  .gemstone-text {
+    position: relative;
+    // height: 150vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0 2rem 0 1rem;
+    padding-left: 1rem;
+    @include border-gradient-left;
+
+    .gemstone-text-content {
+      & > * {
+        margin-bottom: 2rem;
+      }
+    }
+
+    @include tablet {
+      margin: 0 3rem 0 2rem;
+      padding-left: 2rem;
+    }
+    @include tablet-l {
+      margin: 0 4rem 0 3rem;
+      padding-left: 3rem;
+    }
+    @include desktop-sm {
+      align-items: center;
+      max-width: 60rem;
+      margin: 0 auto;
+    }
+  }
+
+  h2 {
+    // margin: 10rem 0;
+    @include font-raleway(600);
+    @include text-gradient;
+
+    @include desktop-sm {
+      br {
+        display: none;
+      }
+    }
+
+    span {
+      @include font-raleway(600);
+    }
+  }
+  .pasos-container {
+    @include flex(column, space-evenly, center, none);
+    gap: clamp(1rem, -0.143rem + 5.714vw, 2rem);
+    height: 200lvh;
+    max-width: 650px;
+    margin: 0 auto;
+
+    
+    @include desktop-sm {
+      max-width: 1920px;
+      height: auto;
+    }
+
+    button {
+      color: var(--colorBg);
+    }
+
+    .pasos__title {
+      @include flex(column, center, center, none);
+      flex-grow: 1;
+
+      @include desktop-sm{
+        margin: 10rem 0;
+      }
+    }
+
+
+    .paso {
+      z-index: 0;
+      position: relative;
+      padding: $spac-s;
+      margin: $spac-m;
+      border: $border-white;
+
+      // @include glass-bg-only;
+      
+      .paso__active {
+        color: var(--colorSecundario);
+      }
+ 
+
+      @include border-gradient;
+
+      @include desktop-sm {
+        max-width: 40%;
+
+        &:hover{
+          h1{
+            color: var(--colorSecundario);
+          }
+        }
+      }
+
+      .paso-overflow {
+        overflow-y: hidden;
+      }
+
+      h1 {
+        @include font-monument-normal(100);
+        position: absolute;
+
+        z-index: -10;
+        font-size: clamp(15rem, 10.714rem + 21.429vw, 21rem);
+        // font-size: 12rem;
+        top: -50%;
+        left: -10%;
+        margin: 0;
+        line-height: clamp(10rem, 5.714rem + 21.429vw, 16rem);
+        color: var(--gris1);
+
+        @include mobile-sm{
+          top: -60%;
+        }
+
+        @include tablet {
+          left: -5%;
+        }
+      }
+
+      .paso-title {
+        @include font-monument-normal;
+        margin: 0;
+      }
+
+      @include tablet {
+        margin: $spac-l;
+        padding: $spac-m;
+      }
+    }
+
+    button {
+      padding: 0.5rem 2rem;
+    }
+
+    .paso-1 {
+      z-index: 3;
+    }
+    .paso-2 {
+      z-index: 1;
+    }
+    .paso-3 {
+      z-index: 0;
+    }
+    
+    @include desktop-sm {
+      .paso-1 {
+        z-index: 3;
+        align-self: flex-start;
+      }
+      .paso-2 {
+        z-index: 1;
+        align-self: center;
+      }
+      .paso-3 {
+        z-index: 0;
+        align-self: flex-end;
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+:root{
+    --colorBg: black;
+    --colorBg_invert: white;
+    --colorBg_switch: #3332327d;
+    --colorBg_almost: #212121;
+
+    --colorPrimario: #0B4599;
+    --colorSecundario: #C9FC59;
+    --textoPrincipal: #c6c6c6;
+    --textoTitulos: #ffffff;
+    --textoStrong: #ffffff;
+
+    --colorSvg_1: #ffffff;
+    --colorSvg_2: #c6c6c6;
+
+    --borderGradient1: #c6c6c6;
+    --borderGradient2: #000000;
+
+    --glassBg : radial-gradient(at center top, #ffffff20, #01010100);
+    --glassBg_bottom : radial-gradient(at center bottom, #0b469926, #010101);
+
+    --gradHr : radial-gradient(at center, #ffffff74, #010101);
+
+    --gris: #6969698b;
+    --gris1: #696969;
+    --svgInvert: invert(1);
+
+    --formBg : #000000;
+    --formBg_stroke: #636262;
+    --formGradient: #ffffff20;
+    --termsGradient: #ffffff1e;
+    --formTransparent : #ffffff6f;
+    --lightTransparent: #ffffff0e;
+
+}

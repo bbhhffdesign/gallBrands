@@ -1,0 +1,88 @@
+@use "../abstract/mixins" as *;
+@use "../abstract/variables" as *;
+
+footer{
+    z-index: 4;
+    position: relative;
+    background: var(--colorBg);
+}
+
+.footer{
+    border-top: 1px solid var(--textoTitulos);
+    padding-top: 1rem;
+    // max-width: $desktop-md;
+    text-align: center;
+
+
+
+    &>div{
+        box-sizing: border-box;
+        margin-bottom: $spac-s;
+        @include desktop-sm{
+            margin-bottom: $spac-m;
+
+        }
+    }
+
+    p{
+        font-size: 75%;
+        margin: 0;
+        @include tablet{
+            font-size: 90%;
+        }
+        @include desktop-sm{
+            font-size: 100%;
+        }
+    }
+    svg{
+        width: 25px;
+        stroke: var(--colorBg_invert);
+        fill: var(--colorBg_invert);
+    }
+
+    .footer-text-container{
+        @include desktop-sm{
+            @include flex(column, center, center, none)
+        }
+    }
+
+    .footer-text{
+        @include desktop-sm{
+            text-align: start;
+        }
+    }
+    
+    .footer-logo{
+        
+        @include desktop-sm{
+            // height: 150%;   
+        }
+        svg{
+            height: 60px;
+            width: auto;
+
+        }
+    }
+    .footer-social{
+        @include flex(row, center , center, 1rem);
+        height: 100%;
+
+        svg{
+            cursor: pointer;
+            width: 1.5rem;
+            stroke: var(--colorBg_invert);
+            fill: var(--colorBg_invert);
+        }
+
+        @include desktop-md{    
+            justify-content: flex-end;
+            gap: 2rem;
+
+        }
+
+        }
+        p{
+            text-align: center;
+        }
+    }
+   

@@ -1,0 +1,43 @@
+@use "abstract/variables" as *;
+@use "abstract/mixins" as *;
+
+
+@forward '../css/pure.css';
+@forward '../css/pure-grid-responsive.css';
+@forward './abstract/globales';
+@forward 'components/buttons';
+@forward 'components/btn-slider';
+@forward './abstract/utilidades';
+@forward './abstract/colorSwitches';
+@forward './abstract/keyframes';
+@forward 'components/btn_float';
+@forward './layout/nav';
+@forward 'components/counter';
+@forward './layout/hero';
+@forward './layout/mindmap';
+@forward './layout/somos';
+@forward './layout/hero-bg';
+@forward './layout/services';
+@forward './layout/gemstone';
+@forward './layout/faq';
+@forward './layout/brands-animation';
+@forward './layout/testimonials';
+@forward './layout/orbita';
+@forward './layout/cta-email';
+@forward './layout/footer';
+@forward './abstract/colorSwitches';
+@forward './form/form.scss';
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+    font-size: 90%;
+  }
+
+body{
+    background-color:var(--colorBg);
+    overflow: hidden;
+    // overscroll-behavior: none;
+}
+
+

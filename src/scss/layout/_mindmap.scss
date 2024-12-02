@@ -1,0 +1,24 @@
+.mind-svg-text,
+.no-svg,
+.si-svg,
+.flecha,
+.like-1,
+.like-2{
+    stroke: var(--textoPrincipal);
+    fill: var(--textoPrincipal);
+}
+.flecha{
+    fill: none;
+}
+.mindmap-like,
+.agendabigfill-svg{
+    fill: var(--colorSecundario);
+}
+.like-1,
+.like-2{
+    stroke: var(--colorBg);
+}
+#agendaBig{
+    stroke: var(--colorBg);
+    fill: var(--colorBg);
+}

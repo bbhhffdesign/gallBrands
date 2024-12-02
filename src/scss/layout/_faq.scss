@@ -1,0 +1,84 @@
+@use "../abstract/mixins" as *;
+@use "../abstract/variables" as *;
+
+.faq{
+    @include flex (column, center, center, none);
+    height: auto;
+    background:var(--glassBg_bottom);
+    padding-bottom: 0;
+
+   .faq-text{
+       text-align: center;
+        margin: 0 0 10lvh 0;
+   }
+
+
+   .faq-container{
+    box-sizing: border-box;
+    height: 90lvh;
+    width: 100%;
+    padding: 1rem;
+    max-width: $tablet-l;
+
+    @include tablet{
+        padding: 2rem;
+    }
+
+    @include desktop-sm{
+        height: 110svh;
+        max-width: $desktop-sm;
+    }
+    @include desktop-lg{
+        height: 90svh;
+    }
+
+   }
+
+
+
+}
+
+.faq-qanda{
+    position: relative;
+    border: $border-black;
+    border-radius: $border-rad-s;
+    padding: $spac-s;
+    @include flex(column, center, center,none);
+    background-color: var(--colorBg_switch);
+    margin: clamp(1rem, -1rem + 2.5vw, 2rem);
+
+
+    
+    
+
+    .question{
+        cursor: pointer;
+        @include flex(row, flex-start, center,none);
+        width: 100%;
+    
+        img{
+            transition: all 0.3s ease;
+            margin-right: 1rem;
+            height: clamp(1rem, 0.643rem + 1.786vw, 1.5rem);
+            @include desktop-sm{
+                margin-right: 2rem;
+            }
+    
+        }
+        p{
+            margin: 0;
+    
+        }
+    
+    }
+    .answer{
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+
+        p{
+            margin: 0;
+        }
+    }
+
+}
