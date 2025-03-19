@@ -10,7 +10,7 @@ const countMsj = document.getElementById("counter_msj")
 let countdownInterval;
 
 function updateVisibility() {
-  const targetDate = new Date("Dec 29, 2024 12:32:00").getTime(); // Fecha de término
+  const targetDate = new Date("Apr 2, 2025 12:32:00").getTime();
   const now = new Date().getTime();
   const distance = targetDate - now;
 
