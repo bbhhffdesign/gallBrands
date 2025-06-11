@@ -4717,6 +4717,9 @@ body {
   overflow: hidden;
 }
 
-.iub__us-widget {
+.iub__us-widget,
+.iubenda-tp-btn {
   display: none !important;
+  z-index: -10 !important;
+  opacity: 0 !important;
 }
